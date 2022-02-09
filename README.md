@@ -10,9 +10,18 @@ V1:
 - [x] Webstorm configuration
 - [x] Installation packages and configuration TypeScript  
 - [x] Express configuration and public folder - static files creation
-- [ ] Routes structure
+- [x] Routes structure:
+  - Main page - /
+  - Warrior sing
+    - form 
+    - save warrior
+  - Fight Arena
+    - form - choose warrior
+    - fight - log from the actual fight
+  - Hall of Glory
+    - List of 10 best Warriors 
 - [ ] View - Overall views structure
-- [ ] Records
+- [ ] Warrior Record
 - [ ] Logic for Warriors creation 
 - [ ] Logic for Hall of Glory
 - [ ] Logic for Fight Arena
