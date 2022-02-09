@@ -20,8 +20,18 @@ V1:
     - fight - log from the actual fight
   - Hall of Glory
     - List of 10 best Warriors 
-- [ ] View - Overall views structure
+- [x] View - Overall views structure
 - [ ] Warrior Record
+  - Database name: typescript_warrior_db
+  - Tables:
+    - warrior: 
+      - ID- UUID (VARCHAR(36))
+      - name - varchar - unique
+      - Strength - TINYINT(2)
+      - Defence - TINYINT(2)
+      - Wytrzymałość - TINYINT(2)
+      - Obrona - TINYINT(2)
+      - Wins - INT(11) - default 0
 - [ ] Logic for Warriors creation 
 - [ ] Logic for Hall of Glory
 - [ ] Logic for Fight Arena

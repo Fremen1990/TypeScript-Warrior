@@ -7,6 +7,7 @@ import {homeRouter} from "./routers/home";
 import { warriorRouter } from "./routers/warrior";
 import { arenaRouter } from "./routers/arena";
 import { hallOfGloryRouter } from "./routers/hall-of-glory";
+import {WarriorRecord} from "./records/warrior.record";
 
 const app = express();
 
@@ -15,10 +16,12 @@ app.use(urlencoded({
     extended: true,
 }));
 app.use(eStatic('public'));
-app.engine('.hbn', engine({
+
+app.engine('.hbs', engine({
     extname: '.hbs',
     // helpers: ???
 }));
+
 app.set('view engine', '.hbs');
 
 
