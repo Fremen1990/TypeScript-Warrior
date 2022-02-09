@@ -9,7 +9,7 @@ ToDo:
 V1:
 - [x] Webstorm configuration
 - [x] Installation packages and configuration TypeScript  
-- [ ] Public folder - static files
+- [x] Express configuration and public folder - static files creation
 - [ ] Routes structure
 - [ ] View - Overall views structure
 - [ ] Records
