@@ -1,27 +1,53 @@
-<h2>Sign up your warrior</h2>
 
-<form action="/warrior" method="post">
 
-    <label >
-        Name: <br>
-        <input type="text" name="name" minlength="3" maxlength="50"> <br>
-    </label>
-    <label >
-        Strength: <br>
-        <input type="number" name="strength" value="1" min="1" max="10"><br>
-    </label>
-    <label >
-        Defence: <br>
-        <input type="number" name="defence" value="1" min="1" max="10"><br>
-    </label>
-    <label >
-        Stamina: <br>
-        <input type="number" name="stamina" value="1" min="1" max="10"><br>
-    </label>
-    <label >
-        Agility: <br>
-        <input type="number" name="agility" value="1" min="1" max="10"><br>
-    </label>
+<div class="container ">
 
-    <button type="submit">Sign up!</button>
-</form>
+    <h2 class=" row justify-content-md-center mb-3">Sign up your warrior</h2>
+
+    <form class="row justify-content-md-center" action="/warrior" method="post">
+
+        <label class="form-label row w-25">
+            Name: <br>
+            <input class="form-control" type="text" name="name" minlength="3" maxlength="50" placeholder="your name">
+            <br>
+        </label>
+        <label class="form-label row w-25">
+            Strength: <br>
+            <input class="form-control" type="number" name="strength" value="1" min="1" max="10"><br>
+        </label>
+        <label class="form-label row w-25">
+            Defence: <br>
+            <input class="form-control" type="number" name="defence" value="1" min="1" max="10"><br>
+        </label>
+        <label class="form-label row w-25">
+            Stamina: <br>
+            <input class="form-control" type="number" name="stamina" value="1" min="1" max="10"><br>
+        </label>
+        <label class="form-label row w-25">
+            Agility: <br>
+            <input class="form-control" type="number" name="agility" value="1" min="1" max="10"><br>
+        </label>
+
+        <!--    <button type="submit">Sign up!</button>-->
+        <button type="submit" class="btn btn-warning">Sign up!</button>
+
+    </form>
+
+</div>
+<!--<div class="row g-3 align-items-center">-->
+<!--    <div class="col-auto">-->
+<!--        <label for="inputPassword6" class="col-form-label">Password</label>-->
+
+<!--    </div>-->
+<!--    <div class="col-auto">-->
+<!--        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">-->
+<!--    </div>-->
+<!--    <div class="col-auto">-->
+<!--    <span id="passwordHelpInline" class="form-text">-->
+<!--      Must be 8-20 characters long.-->
+<!--    </span>-->
+<!--        <button type="submit" class="btn btn-warning">Sign up!</button>-->
+<!--    </div>-->
+
+
+<!--</div>-->
