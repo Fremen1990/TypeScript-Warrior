@@ -37,8 +37,23 @@ V1:
 - [ ] Logic for Fight Arena
 
 V2:
-- [ ] Vizualization for Fight Log
+- [ ] Visualization for Fight Log
 - [ ] Front-End JavaScript to handle points for warriors
+
+
+Algorithm:
+
+1. Every warrior on the beginning have health (HP) calculated as stamina * 10.
+2. Every warrior on the beginning have defence (DP) same as number of defence points.
+3. The warrior who is starting is attaching with the value same as strength points
+4. If attacked warrior have defence  + agility  bigger than attacker strength:
+   4.1. Defence is decreased by strength points
+   4.2.A) If attack was higher than defence, then health is decreased by remaining amount of strength decreased by 
+   defence of opponent.
+   4.2.B) If attack was the same or smaller than defence, then health points remains the same.
+   4.2. Jeżeli warunek 3 NIE JEST SPEŁNIONY to po prostu od życia odejmujemy atak
+5. Change roles, and the attacker is now in defence role and defender in attacker role.
+6. Repeat whole algorithm until health of one warrior is <= 0, then the winner is the one with remaining health
 
 
 package.json:  
