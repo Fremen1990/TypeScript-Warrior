@@ -22,24 +22,24 @@ export class WarriorRecord
 // implements WarriorEntity
 {
     public id?: string;
+    public wins?: number;
     public readonly name: string;
     public readonly strength: number;
     public readonly defence: number;
     public readonly stamina: number;
     public readonly agility: number;
-    public wins?: number;
 
     constructor(obj: Omit<WarriorRecord, 'insert' | 'update'>
                 // Pick<WarriorRecord, 'id'|'name'| 'strength'| 'stamina'| 'agility' | 'wins'>
     ) {
         const {name, id, strength, defence, stamina, agility, wins} = obj;
 
-        const stats = [ strength, defence, stamina, agility];
+        const stats = [strength, defence, stamina, agility];
 
         const sum = stats.reduce((prev, curr) => prev + curr, 0)
 
-        for(const stat of stats){
-            if(stat<1){
+        for (const stat of stats) {
+            if (stat < 1) {
                 throw new ValidationError(`Each one statistic must be at least 1 point`)
             }
         }
@@ -66,8 +66,8 @@ export class WarriorRecord
         // if (!this.id) {  // moved to constructor with null'ish operator
         //     this.id = uuid();
         // }
-        await pool.execute("INSERT INTO `warriors`(`id`, `name`, 'strength`, `defense', 'stamina', 'agility')" +
-            " VALUES(:id, :name, :strength, :defense, :stamina, :agility )", {
+        await pool.execute("INSERT INTO `warriors`(`id`, `name`, `strength`, `defence`, `stamina`, `agility`)" +
+            " VALUES(:id, :name, :strength, :defence, :stamina, :agility )", {
             id: this.id,
             name: this.name,
             strength: this.strength,
@@ -98,6 +98,11 @@ export class WarriorRecord
     static async listTop(topCount: number): Promise<WarriorRecord[]> {
         const [results] = (await pool.execute("SELECT * FROM `warriors` ORDER BY `wins` ASC limit `wins` DESC LIMIT ${topCount}")) as WarriorRecordResults;
         return results.map(obj => new WarriorRecord(obj));
+    }
+
+    static async isNameTaken(name: string): Promise<boolean> {
+        const [results] = await pool.execute("SELECT * FROM `warriors` WHERE `name` = :name", {name}) as WarriorRecordResults;
+        return results.length > 0;
     }
 
 

@@ -21,7 +21,7 @@ V1:
   - Hall of Glory
     - List of 10 best Warriors 
 - [x] View - Overall views structure
-- [ ] Warrior Record
+- [x] Warrior Record
   - Database name: typescript_warrior_db
   - Tables:
     - warrior: 
@@ -32,7 +32,7 @@ V1:
       - Wytrzymałość - TINYINT(2)
       - Obrona - TINYINT(2)
       - Wins - INT(11) - default 0
-- [ ] Logic for Warriors creation 
+- [x] Logic for Warriors creation 
 - [ ] Logic for Hall of Glory
 - [ ] Logic for Fight Arena
 
