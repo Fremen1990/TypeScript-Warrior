@@ -33,8 +33,8 @@ V1:
       - Obrona - TINYINT(2)
       - Wins - INT(11) - default 0
 - [x] Logic for Warriors creation 
-- [ ] Logic for Hall of Glory
-- [ ] Logic for Fight Arena
+- [x] Logic for Hall of Glory
+- [x] Logic for Fight Arena
 
 V2:
 - [ ] Visualization for Fight Log

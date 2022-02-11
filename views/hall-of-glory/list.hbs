@@ -1,58 +1,48 @@
-///////////////// bootstrap table///////////
-<div class="container">
+<div class="container-fluid justify-content-md-center" style="background: url('hall-of-glory-img.jpg')
+        no-repeat;background-size: cover; height:85vh">
 
-    <!--    <div class=" justify-content-md-center row">-->
-    <h2 class="justify-content-md-center w-100">Hall of glory</h2>
-    <table class="table table-dark table-hover w-50  ">
+    <div class="container w-50">
+
+        <h2 class="justify-content-md-center d-flex text-light" style="height:10vh; line-height:10vh">Hall of glory</h2>
+        <!--<div style="height:10vh">Hall of glory</div>-->
+        <!--<div></div>-->
+        <table class="table table-dark table-hover " style="opacity:.8">
 
 
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Wins no</th>
-            <th scope="col">Name</th>
-        </tr>
-        </thead>
-        <tbody>
-        {{#each warriors}}
+            <thead>
             <tr>
-                <th>
-                    {{@index}}
-                </th>
-                <th>
-                    {{this.wins}}
-                </th>
-                <th>
-                    {{this.name}}
-                <th>
+                <th scope="col">#</th>
+                <th scope="col">Wins no</th>
+                <th scope="col">Name</th>
             </tr>
-        {{/each}}
+            </thead>
+            <tbody>
+            {{#each warriors}}
+                <tr>
+                    <th>
+                        {{this.place}}
+                    </th>
+                    <th>
+                        {{this.warrior.wins}}
+                    </th>
+                    <th>
+                        {{this.warrior.name}}
+                    <th>
+                </tr>
+            {{/each}}
 
 
-        <tr>
-            <th>1</th>
-            <th>36</th>
-            <th>Zyzio
-            <th>
-        </tr>
-
-        <tr>
-            <th>1</th>
-            <th>36</th>
-            <th>Zyzio
-            <th>
-        </tr>
-
-        <tr>
-            <th>1</th>
-            <th>36</th>
-            <th>Zyzio
-            <th>
-        </tr>
-
-        </tbody>
-    </table>
 
 
-    <!--    </div>-->
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+
+
+
 </div>
+

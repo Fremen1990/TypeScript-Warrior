@@ -26,6 +26,8 @@ app.engine('.hbs', engine({
 
 app.set('view engine', '.hbs');
 
+app.use(express.static('views/img'));
+
 
 app.use('/', homeRouter);
 app.use('/warrior', warriorRouter);

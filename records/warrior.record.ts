@@ -80,13 +80,14 @@ export class WarriorRecord
 
     async update(id: string, wins: number): Promise<void> {
         //wins
-        await pool.execute("UPDATE `warriors` SET `wins` = :wins", {
+        await pool.execute("UPDATE `warriors` SET `wins` = :wins WHERE id = :id", {
             wins: this.wins,
+            id :this.id
         })
     }
 
     static async getOne(id: string): Promise<WarriorRecord | null> {
-        const [results] = await pool.execute("SELECT * FROM `warrior` WHERE `id` = :id", {id}) as WarriorRecordResults;
+        const [results] = await pool.execute("SELECT * FROM `warriors` WHERE `id` = :id", {id}) as WarriorRecordResults;
         return results.length === 0 ? null : new WarriorRecord(results[0])
     }
 
