@@ -26,7 +26,7 @@ app.engine('.hbs', engine({
 
 app.set('view engine', '.hbs');
 
-app.use(express.static('views/img'));
+app.use(express.static(__dirname + '/views/img/'));
 
 
 app.use('/', homeRouter);

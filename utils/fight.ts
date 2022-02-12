@@ -1,10 +1,27 @@
 import {WarriorRecord} from "../records/warrior.record";
 
+// export enum LogEntryType {
+//     Attack,
+//     Defence,
+//     DefenceBroken
+// }
+
+//
+export interface LogEntry {
+    logMessage: string;
+    logIcon: string;
+}
+
+
 export const fight = (warrior1: WarriorRecord, warrior2: WarriorRecord): {
-    log: string[];
+    log: LogEntry[];
+    // log:string[];
     winner: WarriorRecord;
 } => {
-    const log: string[] = [];
+    const log:
+        // string[]
+        LogEntry[] = [];
+
 
     const warrior1Obj = {
         hp: warrior1.stamina * 10,
@@ -24,21 +41,32 @@ export const fight = (warrior1: WarriorRecord, warrior2: WarriorRecord): {
     do {
         const attackStrength = attacker.warrior.strength;
 
-        log.push(`${attacker.warrior.name} is attacking ${defender.warrior.name} with strength ${attackStrength}`)
+        let   logMessage = (`${attacker.warrior.name} is attacking ${defender.warrior.name} with strength ${attackStrength}`)  ;
+
+         log.push(logMessage as any); // TODO ANY !!
+
 
         if (defender.dp + defender.warrior.agility > attackStrength) {
 
-            log.push(`${defender.warrior.name} is defending himself from ${attacker.warrior.name}'s attack`)
+            let logMessage = (`${defender.warrior.name} is defending himself from ${attacker.warrior.name}'s attack`)
+
+            log.push(logMessage as any) // TODO ANY!!
+
+
             defender.dp -= attackStrength;
 
             if (defender.dp < 0) {
 
-                log.push(`${attacker.warrior.name} fighting through ${defender.warrior.name} defence and causing damage ${-defender.dp} hp to ${defender.warrior.name}`)
+                let logMessage = (`${attacker.warrior.name} fighting through ${defender.warrior.name} defence and causing damage ${-defender.dp} hp to ${defender.warrior.name}`)
+
+                log.push(logMessage as any ) //  TODO ANY !!
 
                 defender.hp -= attackStrength - defender.dp; //  todo tu zmieniłem
             }
-        }else{
-            log.push(`${attacker.warrior.name}  is damaging   ${defender.warrior.name}  with ${attackStrength} hp`)
+        } else {
+            let logMessage = (`${attacker.warrior.name}  is damaging   ${defender.warrior.name}  with ${attackStrength} hp`)
+
+            log.push(logMessage as any); // TODO ANY!!
 
             defender.hp -= attackStrength;
         }
@@ -48,6 +76,9 @@ export const fight = (warrior1: WarriorRecord, warrior2: WarriorRecord): {
     } while (defender.hp > 0);
 
     const winner = defender.warrior;
-log.push(`${winner.name} won!`)
+
+    let logMessage = (`${winner.name} won!`)
+
+    log.push(logMessage as any) // TODO ANY!!
     return {log, winner}
 }

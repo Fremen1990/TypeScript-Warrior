@@ -1,10 +1,26 @@
-<h2>Choose warriors which will find agains each other</h2>
-<form action="/arena/fight" method="POST">
+<div class="container-fluid row justify-content-md-center " style="background: url('home.jpg')
+        no-repeat;background-size: cover; height:85vh">
 
 
-{{> warrior-select select-name="warrior1"}}
-{{> warrior-select select-name="warrior2"}}
-    <br>
-<button type="submit">Fight!</button>
 
-</form>
+
+
+    <form action="/arena/fight" method="POST" class="container ">
+
+        <h3 class="  text-light bg-dark text-center p-3  mt-5">Choose warriors which
+            will fight agains each other:</h3>
+
+        <div class=" justify-content-md-center w-100 align-content-center">
+            {{> warrior-select select-name="warrior1"}}
+            {{> warrior-select select-name="warrior2"}}
+            <br>
+
+        </div>
+
+        <button type="submit" class=" row-3 btn btn-danger justify-content-md-center ">Fight!</button>
+
+
+    </form>
+
+
+</div>
